@@ -16,8 +16,32 @@ $(function () {
  
       console.log(line13)
        console.log(line14)
-   
-  });
+     });
+     
+     $(document).ready(function() {
+      // Get the current hour
+      var currentTime = dayjs().hour();
+      console.log(currentTime)
+        // Loop through each element with an ID starting with 'hour-'
+      $('[id^="hour-"]').each(function() {
+        // Get the ID of the element
+        var id = $(this).attr('id');
+    
+        // Extract the hour value from the ID (The format is 'hour-X')
+        var hour = parseInt(id.split('-')[1]);
+        // Now we are comparing the hour with the current hour
+        if (hour < currentTime) {
+          console.log(hour)
+          $(this).addClass('past');
+        } else if (hour === currentTime) {
+          $(this).addClass('present');
+        } else {
+          $(this).addClass('future');
+        }
+      });
+    });
+
+
  
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
