@@ -1,0 +1,34 @@
+$(document).ready(function() {
+  // Check if the element with id 'myElement' has a class 'highlight'
+  if ($('#myElement').hasClass('highlight')) {
+    // Remove the 'highlight' class
+    $('#myElement').removeClass('highlight');
+  } else {
+    // Add the 'highlight' class
+    $('#myElement').addClass('highlight');
+  }
+});
+
+
+    var currentTime = dayjs().hour()
+    console.log(currentTime)
+    var pastAppointment = document.getElementsByClassName("past");
+    var presentAppointment = document.getElementsByClassName("present");
+    var futureAppointment = document.getElementsByClassName("future");
+    // var past = (currentTime - 1)
+    // var present = currentTime
+    // var future = (currentTime + 1)
+    console.log(past)
+    console.log(present)
+    console.log(future)
+
+    $(document).ready(function() {
+      // Check if the element with id 'hour-9' has a class 'highlight'
+      if ($('hour-9').hasClass('present')) {
+        // Remove the 'highlight' class
+        $('hour-9').removeClass('past');
+      } else {
+        // Add the 'highlight' class
+        $('hour-9').addClass('future');
+      }
+    });

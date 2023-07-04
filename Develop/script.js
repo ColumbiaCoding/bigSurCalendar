@@ -22,16 +22,17 @@ $(function () {
       // Get the current hour
       var currentTime = dayjs().hour();
       console.log(currentTime)
-        // Loop through each element with an ID starting with 'hour-'
+
+      // Loop through each element with an ID starting with 'hour-'
       $('[id^="hour-"]').each(function() {
         // Get the ID of the element
         var id = $(this).attr('id');
-    
+        
         // Extract the hour value from the ID (The format is 'hour-X')
         var hour = parseInt(id.split('-')[1]);
+        console.log(hour)
         // Now we are comparing the hour with the current hour
         if (hour < currentTime) {
-          console.log(hour)
           $(this).addClass('past');
         } else if (hour === currentTime) {
           $(this).addClass('present');
