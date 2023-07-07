@@ -31,7 +31,9 @@ $(function () {
         // Extract the hour value from the ID (The format is 'hour-X')
         var hour = parseInt(id.split('-')[1]);
         console.log(hour)
+        console.log(currentTime)
         // Now we are comparing the hour with the current hour
+        
         if (hour < currentTime) {
           $(this).addClass('past');
         } else if (hour === currentTime) {
